@@ -26,7 +26,7 @@ function createGrid(size) {
     // clear any existing grid
     gridContainer.innerHTML = '';
     
-    const newChildDivSize = 960 / size;
+    const newChildDivSize = 500 / size;
 
     const totalSquares = size * size;
 
