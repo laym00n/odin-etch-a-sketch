@@ -47,7 +47,30 @@ function createGrid(size) {
 
         // add event listener for hover color effect
         newChildDiv.addEventListener('mouseover', () => {
-            newChildDiv.style.backgroundColor = 'black';
+            // check if the square already has a bg color (first pass)
+            if (!newChildDiv.style.backgroundColor) {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+
+                // set it as the  background color
+                newChildDiv.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+                // set opacity to 10%
+                newChildDiv.style.opacity = 0.1;
+            }
+            else {
+                // already has a color (subsequent pass)
+                let currentOpacity = parseFloat(newChildDiv.style.opacity);
+
+                // if not fully opaque
+                if (currentOpacity < 1) {
+                    currentOpacity += 0.1;
+                }
+
+                // set new opacity
+                newChildDiv.style.opacity = currentOpacity;
+            }
         });
     }
 }
