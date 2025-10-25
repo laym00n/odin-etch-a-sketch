@@ -7,8 +7,10 @@
 }
 
 .grid-square{
-    width: 60px;
-    height: 60px;
     box-sizing: border-box;
     border: 1px solid hsla(0, 60%, 25%, 0.80);
+}
+
+#reset-button{
+    font-size: 2.5rem;
 }
